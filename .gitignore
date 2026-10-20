@@ -32,4 +32,116 @@ render.experimental.xml
 google-services.json
 
 # Android Profiling
-*.hprof
+*.hprof<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иван — Ремонт и регулировка окон в Москве</title>
+    
+    <!-- Метатеги для красивого превью при пересылке в WhatsApp, Telegram, Viber -->
+    <meta property="og:title" content="Иван — Ремонт и регулировка окон">
+    <meta property="og:description" content="Частный мастер в Москве. Быстрая регулировка, замена уплотнителей, ремонт фурнитуры и стеклопакетов. Цены до начала работ!">
+    <meta property="og:type" content="website">
+    
+    <style>
+        body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #eef2f6; font-family: Arial, Helvetica, sans-serif; }
+        .card { background: #fff; width: 100%; max-width: 420px; margin: 16px; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.12); overflow: hidden; }
+        .head { background: #1f4e8c; color: #fff; padding: 22px 24px; text-align: center; }
+        .head h1 { margin: 0; font-size: 22px; letter-spacing: .5px; text-transform: uppercase; }
+        .head .sub { margin-top: 8px; font-size: 15px; opacity: .95; font-weight: bold; }
+        .head .loc { margin-top: 4px; font-size: 13px; opacity: .8; }
+        .body { padding: 20px 24px; color: #222; }
+        .hook { font-size: 16px; font-weight: bold; margin: 0 0 12px; color: #1f4e8c; line-height: 1.5; text-align: center; }
+        h2 { font-size: 16px; margin: 18px 0 8px; border-bottom: 2px solid #eef2f6; padding-bottom: 4px; }
+        ul { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.6; }
+        .brands { font-size: 14px; margin-top: 16px; font-weight: bold; color: #555; text-align: center; }
+        .note { font-size: 13px; color: #666; margin-top: 14px; line-height: 1.5; text-align: center; font-style: italic; }
+        .btn { display: flex; align-items: center; justify-content: center; text-decoration: none; padding: 14px; margin: 12px 0; border-radius: 10px; font-size: 16px; font-weight: bold; transition: background 0.2s; border: none; width: 100%; cursor: pointer; font-family: inherit; }
+        .call { background: #1f4e8c; color: #fff; }
+        .call:hover { background: #153b6b; }
+        .save { background: #e7eef8; color: #1f4e8c; }
+        .save:hover { background: #d0e0f5; }
+        .share { background: #25d366; color: #fff; }
+        .share:hover { background: #20ba5a; }
+        .btn-icon { margin-right: 8px; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="head">
+        <h1>Ремонт окон</h1>
+        <div class="sub">ИВАН · Частный мастер</div>
+        <div class="loc">📍 Москва и МО</div>
+    </div>
+    <div class="body">
+        <p class="hook">Дует из окна? Заедает ручка?<br>Створка плохо закрывается?</p>
+        
+        <h2>🔧 Что я делаю:</h2>
+        <ul>
+            <li>Диагностика и устранение продуваний</li>
+            <li>Регулировка окон и смазка фурнитуры</li>
+            <li>Замена уплотнителя (пропадут сквозняки)</li>
+            <li>Ремонт и полная замена фурнитуры / редуктора</li>
+            <li>Модернизация (поворотное в поворотно-откидное)</li>
+            <li>Замена разбитых или запотевших стеклопакетов</li>
+        </ul>
+
+        <p class="brands">Обслуживаю фурнитуру: SCHÜCO · ROTO · SIEGENIA и др.</p>
+        <p class="note">Стоимость ремонта всегда согласовывается до начала работ.</p>
+        
+        <!-- Основные кнопки действий -->
+        <a class="btn call" href="tel:+79773165289">
+            <span class="btn-icon">📞</span> Позвонить: +7 (977) 316-52-89
+        </a>
+        
+        <a class="btn save" id="save" href="#" download="Иван_Ремонт_Окон.vcf">
+            <span class="btn-icon">💾</span> Сохранить в контакты
+        </a>
+
+        <button class="btn share" id="shareButton">
+            <span class="btn-icon">📢</span> Поделиться визиткой
+        </button>
+    </div>
+</div>
+
+<script>
+    // 1. Автоматическая генерация vCard (файла контакта)
+    const vcard = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        "N:Иван (Ремонт Окон);;;;",
+        "FN:Иван — Ремонт и регулировка окон",
+        "ORG:Частный мастер по окнам",
+        "TEL;TYPE=CELL:+79773165289",
+        "ADR;TYPE=WORK:;;Москва;;;;",
+        "NOTE:Ремонт фурнитуры, замена уплотнителей, регулировка окон.",
+        "END:VCARD"
+    ].join("\r\n");
+    
+    document.getElementById("save").href = URL.createObjectURL(new Blob([vcard], { type: "text/vcard;charset=utf-8" }));
+
+    // 2. Кнопка «Поделиться» (использует системное меню смартфона)
+    document.getElementById("shareButton").addEventListener("click", async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Иван — Ремонт окон',
+                    text: 'Мастер по ремонту и регулировке окон в Москве. Рекомендую!',
+                    url: window.location.href
+                });
+            } catch (err) {
+                console.log("Пользователь отменил отправку");
+            }
+        } else {
+            // Если браузер не поддерживает Share API (например, старый ПК), копируем ссылку
+            navigator.clipboard.writeText(window.location.href);
+            alert("Ссылка на визитку скопирована в буфер обмена! Отправьте её клиенту.");
+        }
+    });
+</script>
+
+</body>
+</html>
+
